@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generátor XML předmětu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CKEditor 5 -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+  <!-- html2pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body class="p-4 bg-light">
+  <div class="container">
+    <h1 class="mb-4">Generátor XML pro předmět</h1>
+
+    <!-- ID předmětu -->
+    <div class="mb-3">
+      <label class="form-label">ID předmětu</label>
+      <select id="predmetId" class="form-select">
+        <option value="PGR1">PGR1</option>
+        <option value="PGR2">PGR2</option>
+        <option value="USU">USU</option>
+      </select>
+    </div>
+
+    <!-- Forma ověření -->
+    <div class="mb-3">
+      <label class="form-label">Forma ověření</label>
+      <div id="forma" class="editor"></div>
+    </div>
+
+    <!-- Hlavní témata -->
+    <div class="mb-3">
+      <label class="form-label">Hlavní témata</label>
+      <div id="temata" class="editor"></div>
+    </div>
+
+    <!-- Metody výuky -->
+    <div class="mb-3">
+      <label class="form-label">Metody výuky</label>
+      <div id="metody" class="editor"></div>
+    </div>
+
+    <!-- Studijní literatura -->
+    <h3 class="mt-4">Studijní literatura</h3>
+
+    <div class="mb-3">
+      <label class="form-label">Povinná literatura</label>
+      <div id="literaturaPovinna"></div>
+      <button type="button" class="btn btn-sm btn-secondary mt-2" onclick="addEditor('literaturaPovinna')">+ Přidat</button>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Doporučená literatura</label>
+      <div id="literaturaDoporucena"></div>
+      <button type="button" class="btn btn-sm btn-secondary mt-2" onclick="addEditor('literaturaDoporucena')">+ Přidat</button>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Pomůcky</label>
+      <div id="pomucky"></div>
+      <button type="button" class="btn btn-sm btn-secondary mt-2" onclick="addEditor('pomucky')">+ Přidat</button>
+    </div>
+
+    <!-- Akce -->
+    <div class="mt-4">
+      <button class="btn btn-primary me-2" onclick="downloadXML()">Stáhnout XML</button>
+    </div>
+  
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
