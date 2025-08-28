@@ -1,0 +1,1 @@
+# Akreditace-Generator
