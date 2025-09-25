@@ -8,7 +8,6 @@
 
   <!-- CKEditor 5 -->
   <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
-
 </head>
 <body class="p-4 bg-light">
   <div class="container">
@@ -17,7 +16,7 @@
     <!-- ID předmětu -->
     <div class="mb-3">
       <!-- <label class="form-label">ID předmětu</label> -->
-       <h5 class="mt-4">ID předmětu *</h6>
+       <h5 class="mt-4">ID předmětu (povinné)</h6>
       <select id="predmetId" class="form-select">
         <option value="PGR1">PGR1</option>
         <option value="PGR2">PGR2</option>
@@ -28,21 +27,30 @@
     <!-- Forma ověření -->
     <div class="mb-3">
       <!-- <label class="form-label">Forma ověření (povinné)</label> -->
-       <h5 class="mt-4">Forma ověření *</h5>
+       <h5 class="mt-4">Forma ověření (povinné)</h5>
       <div id="forma" class="editor"></div>
     </div>
 
     <!-- Hlavní témata -->
     <div class="mb-3">
       <!-- <label class="form-label">Anotace předmětu (povinné)</label> -->
-      <h5 class="mt-4">Anotace předmětu *</h5>
+      <h5 class="mt-4">Anotace předmětu (povinné)</h5>
       <div id="temata" class="editor"></div>
     </div>
 
     <!-- Rozsahy témat -->
-    <h5 class="mt-4">Sylabus *</h5>
+    <h5 class="mt-4">Sylabus (povinné)</h5>
+
+    <h6 class="mt-3">Rychlé vložení rozsahů</h6>
+    <div class="mb-3">
+      <textarea id="rangesPaste" class="form-control" rows="6"
+        placeholder="Sem vložte text ve formátu: &#10;1. Úvod do matematiky &#10;2-3. Analýza funkcí &#10;4-6. Derivace a integrály"></textarea>
+      <button type="button" class="btn btn-sm btn-secondary mt-2"
+        onclick="parsePlainTextRanges()">Automaticky rozdělit na rozsahy</button>
+    </div>
+
     <div id="ranges"></div>
-    <button type="button" class="btn btn-sm btn-secondary mt-2" onclick="addRange()">+ Přidat rozsah</button>
+    <button type="button" class="btn btn-sm btn-secondary mt-2" onclick="addRange()">+ Přidat ručně rozsah</button>
 
     <!-- Metody výuky -->
     <div class="mb-3 mt-4">
@@ -55,7 +63,7 @@
     <h5 class="mt-4">Studijní literatura</h5>
 
     <div class="mb-3">
-      <label class="form-label">Povinná literatura *</label>
+      <label class="form-label">Povinná literatura (povinné)</label>
       <div id="literaturaPovinna" class="editor"></div>
     </div>
 
